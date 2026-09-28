@@ -5,6 +5,11 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# vcpkg's x64-windows-static triplet uses the static MSVC runtime.
+if(MSVC AND VCPKG_TARGET_TRIPLET MATCHES "-static$")
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
+
 include(GNUInstallDirs)
 
 find_package(raylib 6.0 QUIET CONFIG)
@@ -39,6 +44,13 @@ target_include_directories(focus_core PUBLIC src)
 
 add_executable(equ-kloku src/main.cc src/platform_paths.cc)
 target_link_libraries(equ-kloku PRIVATE focus_core ${EQU_KLOKU_RAYLIB_TARGET})
+
+# vcpkg builds raylib against external GLFW, but the raylib 6 package does
+# not pass that dependency through to this executable on Windows.
+if(WIN32 AND VCPKG_TARGET_TRIPLET)
+    find_package(glfw3 CONFIG REQUIRED)
+    target_link_libraries(equ-kloku PRIVATE glfw)
+endif()
 
 if(MSVC)
     target_compile_options(focus_core PRIVATE /W4 /permissive-)
