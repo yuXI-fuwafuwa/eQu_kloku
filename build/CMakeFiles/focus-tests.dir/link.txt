@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/focus-tests.dir/link.d "CMakeFiles/focus-tests.dir/tests/focus_tests.cc.o" -o focus-tests  libfocus_core.a

@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/equ-kloku.dir/link.d "CMakeFiles/equ-kloku.dir/src/main.cc.o" "CMakeFiles/equ-kloku.dir/src/platform_paths.cc.o" -o equ-kloku  libfocus_core.a /usr/lib/libraylib.so.6.0.0 -lm

@@ -1,3 +1,0 @@
-/usr/bin/equ-kloku
-/usr/share/equ-kloku/SourceHanSansCN-Regular.otf
-/usr/share/equ-kloku/OFL.txt

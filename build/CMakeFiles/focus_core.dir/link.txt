@@ -1,2 +1,0 @@
-/usr/bin/ar qc libfocus_core.a CMakeFiles/focus_core.dir/src/focus_session.cc.o CMakeFiles/focus_core.dir/src/progress_store.cc.o
-/usr/bin/ranlib libfocus_core.a

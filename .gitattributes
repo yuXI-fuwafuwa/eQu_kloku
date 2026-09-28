@@ -1,2 +1,25 @@
-# Auto detect text files and perform LF normalization
+# Normalize text across Linux, macOS, and Windows.
 * text=auto
+
+# Keep project source and configuration files in LF format.
+*.cc text eol=lf
+*.h text eol=lf
+*.cmake text eol=lf
+CMakeLists.txt text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+
+# Windows command scripts conventionally use CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Never apply text conversion or text diffs to bundled assets.
+*.otf binary
+*.ttf binary
+*.ttc binary
+*.png binary
+*.ico binary
+*.wav binary
