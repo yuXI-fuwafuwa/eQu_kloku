@@ -622,6 +622,30 @@ src/main.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/equ-kloku.dir/build.make CMakeFiles/equ-kloku.dir/src/main.cc.s
 .PHONY : src/main.cc.s
 
+src/platform_paths.o: src/platform_paths.cc.o
+.PHONY : src/platform_paths.o
+
+# target to build an object file
+src/platform_paths.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/equ-kloku.dir/build.make CMakeFiles/equ-kloku.dir/src/platform_paths.cc.o
+.PHONY : src/platform_paths.cc.o
+
+src/platform_paths.i: src/platform_paths.cc.i
+.PHONY : src/platform_paths.i
+
+# target to preprocess a source file
+src/platform_paths.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/equ-kloku.dir/build.make CMakeFiles/equ-kloku.dir/src/platform_paths.cc.i
+.PHONY : src/platform_paths.cc.i
+
+src/platform_paths.s: src/platform_paths.cc.s
+.PHONY : src/platform_paths.s
+
+# target to generate assembly for a file
+src/platform_paths.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/equ-kloku.dir/build.make CMakeFiles/equ-kloku.dir/src/platform_paths.cc.s
+.PHONY : src/platform_paths.cc.s
+
 src/progress_store.o: src/progress_store.cc.o
 .PHONY : src/progress_store.o
 
@@ -720,6 +744,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/platform_paths.o"
+	@echo "... src/platform_paths.i"
+	@echo "... src/platform_paths.s"
 	@echo "... src/progress_store.o"
 	@echo "... src/progress_store.i"
 	@echo "... src/progress_store.s"

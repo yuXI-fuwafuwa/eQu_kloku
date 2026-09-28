@@ -93,6 +93,7 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/bit \
   /usr/include/c++/16/bits/algorithmfwd.h \
   /usr/include/c++/16/bits/alloc_traits.h \
+  /usr/include/c++/16/bits/allocated_ptr.h \
   /usr/include/c++/16/bits/allocator.h \
   /usr/include/c++/16/bits/basic_ios.h \
   /usr/include/c++/16/bits/basic_ios.tcc \
@@ -101,6 +102,7 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/bits/char_traits.h \
   /usr/include/c++/16/bits/charconv.h \
   /usr/include/c++/16/bits/chrono.h \
+  /usr/include/c++/16/bits/codecvt.h \
   /usr/include/c++/16/bits/concept_check.h \
   /usr/include/c++/16/bits/cpp_type_traits.h \
   /usr/include/c++/16/bits/cxxabi_forced.h \
@@ -109,6 +111,11 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/bits/exception.h \
   /usr/include/c++/16/bits/exception_defines.h \
   /usr/include/c++/16/bits/exception_ptr.h \
+  /usr/include/c++/16/bits/fs_dir.h \
+  /usr/include/c++/16/bits/fs_fwd.h \
+  /usr/include/c++/16/bits/fs_ops.h \
+  /usr/include/c++/16/bits/fs_path.h \
+  /usr/include/c++/16/bits/fstream.tcc \
   /usr/include/c++/16/bits/functexcept.h \
   /usr/include/c++/16/bits/functional_hash.h \
   /usr/include/c++/16/bits/hash_bytes.h \
@@ -117,8 +124,11 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/bits/istream.tcc \
   /usr/include/c++/16/bits/locale_classes.h \
   /usr/include/c++/16/bits/locale_classes.tcc \
+  /usr/include/c++/16/bits/locale_conv.h \
   /usr/include/c++/16/bits/locale_facets.h \
   /usr/include/c++/16/bits/locale_facets.tcc \
+  /usr/include/c++/16/bits/locale_facets_nonio.h \
+  /usr/include/c++/16/bits/locale_facets_nonio.tcc \
   /usr/include/c++/16/bits/localefwd.h \
   /usr/include/c++/16/bits/memory_resource.h \
   /usr/include/c++/16/bits/memoryfwd.h \
@@ -136,11 +146,16 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/bits/postypes.h \
   /usr/include/c++/16/bits/predefined_ops.h \
   /usr/include/c++/16/bits/ptr_traits.h \
+  /usr/include/c++/16/bits/quoted_string.h \
   /usr/include/c++/16/bits/random.h \
   /usr/include/c++/16/bits/random.tcc \
   /usr/include/c++/16/bits/range_access.h \
+  /usr/include/c++/16/bits/refwrap.h \
   /usr/include/c++/16/bits/requires_hosted.h \
+  /usr/include/c++/16/bits/shared_ptr.h \
+  /usr/include/c++/16/bits/shared_ptr_base.h \
   /usr/include/c++/16/bits/specfun.h \
+  /usr/include/c++/16/bits/sstream.tcc \
   /usr/include/c++/16/bits/std_abs.h \
   /usr/include/c++/16/bits/stdexcept_except.h \
   /usr/include/c++/16/bits/stdexcept_throw.h \
@@ -167,6 +182,7 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/bits/string_view.tcc \
   /usr/include/c++/16/bits/stringfwd.h \
   /usr/include/c++/16/bits/uniform_int_dist.h \
+  /usr/include/c++/16/bits/unique_ptr.h \
   /usr/include/c++/16/bits/uses_allocator.h \
   /usr/include/c++/16/bits/uses_allocator_args.h \
   /usr/include/c++/16/bits/utility.h \
@@ -177,6 +193,7 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/chrono \
   /usr/include/c++/16/clocale \
   /usr/include/c++/16/cmath \
+  /usr/include/c++/16/codecvt \
   /usr/include/c++/16/compare \
   /usr/include/c++/16/concepts \
   /usr/include/c++/16/cstddef \
@@ -192,15 +209,20 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/ext/aligned_buffer.h \
   /usr/include/c++/16/ext/alloc_traits.h \
   /usr/include/c++/16/ext/atomicity.h \
+  /usr/include/c++/16/ext/concurrence.h \
   /usr/include/c++/16/ext/numeric_traits.h \
   /usr/include/c++/16/ext/string_conversions.h \
   /usr/include/c++/16/ext/type_traits.h \
+  /usr/include/c++/16/filesystem \
+  /usr/include/c++/16/fstream \
   /usr/include/c++/16/initializer_list \
+  /usr/include/c++/16/iomanip \
   /usr/include/c++/16/ios \
   /usr/include/c++/16/iosfwd \
   /usr/include/c++/16/iostream \
   /usr/include/c++/16/istream \
   /usr/include/c++/16/limits \
+  /usr/include/c++/16/locale \
   /usr/include/c++/16/new \
   /usr/include/c++/16/numeric \
   /usr/include/c++/16/ostream \
@@ -211,6 +233,7 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/random \
   /usr/include/c++/16/ratio \
   /usr/include/c++/16/set \
+  /usr/include/c++/16/sstream \
   /usr/include/c++/16/stdexcept \
   /usr/include/c++/16/streambuf \
   /usr/include/c++/16/string \
@@ -233,8 +256,10 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/typeinfo \
   /usr/include/c++/16/vector \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h \
+  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/basic_file.h \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++allocator.h \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h \
+  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++io.h \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/cpu_defines.h \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_base.h \
@@ -242,8 +267,10 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/error_constants.h \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h \
+  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/opt_random.h \
   /usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h \
+  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -251,6 +278,7 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o: /home/featherXI/Documents/yuXIwei/Projec
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
+  /usr/include/libintl.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/posix_types.h \
   /usr/include/linux/sched/types.h \
@@ -297,7 +325,7 @@ equ-kloku: /usr/lib/Scrt1.o \
   /usr/lib/libc_nonshared.a \
   /usr/lib/libm.so.6 \
   /usr/lib/libmvec.so.1 \
-  /usr/lib/libraylib.so \
+  /usr/lib/libraylib.so.6.0.0 \
   /usr/lib/libxcb.so.1 \
   /usr/lib32/libX11.so.6 \
   /usr/lib32/libXau.so.6 \
@@ -357,11 +385,45 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/raylib.h:
 
-/usr/include/c++/16/bits/move.h:
+/usr/include/math.h:
 
-/usr/include/c++/16/bits/memoryfwd.h:
+/usr/include/locale.h:
 
-/usr/include/c++/16/bits/stl_construct.h:
+/usr/include/linux/types.h:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/errno.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/opt_random.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/error_constants.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_inline.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/cpu_defines.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/libatomic_asneeded.so:
+
+/usr/include/linux/errno.h:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++io.h:
 
 /usr/include/c++/16/bits/istream.tcc:
 
@@ -375,11 +437,19 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/bits/functexcept.h:
 
+/usr/include/c++/16/bit:
+
 /usr/include/c++/16/bits/exception_ptr.h:
 
 /usr/include/asm/posix_types_64.h:
 
 /usr/include/c++/16/system_error:
+
+/usr/include/stdint.h:
+
+/usr/include/endian.h:
+
+/usr/include/c++/16/bits/exception.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
 
@@ -393,7 +463,7 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/ios:
 
-/usr/include/c++/16/bits/nested_exception.h:
+/usr/include/c++/16/bits/fs_fwd.h:
 
 /usr/include/bits/time64.h:
 
@@ -401,13 +471,7 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/ratio:
 
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/opt_random.h:
-
-/usr/include/c++/16/bit:
-
 /usr/include/c++/16/bits/alloc_traits.h:
-
-/usr/include/c++/16/backward/binders.h:
 
 /usr/include/c++/16/istream:
 
@@ -417,17 +481,11 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/bits/cpp_type_traits.h:
 
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h:
-
 /usr/include/bits/wctype-wchar.h:
 
 /usr/include/bits/timesize.h:
 
 /usr/include/c++/16/string:
-
-/usr/include/c++/16/bits/memory_resource.h:
-
-/usr/include/bits/types/sigset_t.h:
 
 /usr/include/c++/16/bits/ios_base.h:
 
@@ -435,15 +493,21 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/bits/types/struct_tm.h:
 
+/usr/include/c++/16/backward/binders.h:
+
+/usr/include/c++/16/bits/fs_path.h:
+
+/usr/include/c++/16/bits/nested_exception.h:
+
 /usr/include/bits/types/struct_timespec.h:
+
+/usr/include/c++/16/codecvt:
+
+/usr/include/c++/16/bits/locale_facets_nonio.h:
 
 /usr/include/bits/waitflags.h:
 
 /usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/bits/struct_rwlock.h:
-
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h:
 
 /usr/include/gnu/stubs.h:
 
@@ -453,11 +517,9 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/cwctype:
 
-/usr/include/stdint.h:
+/usr/include/bits/types/sigset_t.h:
 
-/usr/include/c++/16/bits/exception.h:
-
-/usr/include/endian.h:
+/usr/include/c++/16/bits/memory_resource.h:
 
 /usr/include/bits/types/mbstate_t.h:
 
@@ -471,25 +533,13 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/bits/stl_tempbuf.h:
 
-/usr/include/c++/16/bits/localefwd.h:
-
-/usr/include/bits/types/time_t.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o:
-
-/usr/include/c++/16/bits/ostream.tcc:
-
 /usr/include/bits/types/clock_t.h:
 
 /usr/include/bits/mathcalls.h:
 
-/usr/lib/libraylib.so:
-
 /usr/include/c++/16/bits/char_traits.h:
 
 /usr/include/bits/types/__fpos_t.h:
-
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/cpu_defines.h:
 
 /usr/include/bits/types/__mbstate_t.h:
 
@@ -513,6 +563,8 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/cstdlib:
 
+/usr/include/c++/16/bits/allocated_ptr.h:
+
 /usr/include/c++/16/bits/locale_facets.h:
 
 /usr/include/bits/struct_mutex.h:
@@ -523,27 +575,47 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/bits/concept_check.h:
 
+/usr/include/bits/types/time_t.h:
+
+/usr/include/c++/16/bits/localefwd.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o:
+
+/usr/include/c++/16/bits/ostream.tcc:
+
 /usr/include/c++/16/bits/functional_hash.h:
+
+/usr/include/c++/16/bits/quoted_string.h:
+
+/usr/include/c++/16/locale:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.so:
 
 /usr/include/bits/flt-eval-method.h:
 
+/usr/include/linux/posix_types.h:
+
+/usr/include/bits/types/FILE.h:
+
+/usr/include/libintl.h:
+
 /usr/include/bits/endianness.h:
 
-/usr/include/bits/sched.h:
-
-/usr/include/bits/types/__FILE.h:
-
-/usr/include/features.h:
-
 /home/featherXI/Documents/yuXIwei/Project/eQu_kloku/src/focus_session.h:
+
+/usr/include/c++/16/bits/locale_conv.h:
+
+/usr/include/c++/16/bits/streambuf.tcc:
+
+/usr/include/c++/16/bits/fs_dir.h:
+
+/usr/include/bits/types/__sigset_t.h:
+
+/usr/include/c++/16/iosfwd:
 
 /usr/include/bits/types/timer_t.h:
 
 /usr/include/c++/16/bits/ostream_insert.h:
-
-/usr/include/bits/mathcalls-narrow.h:
 
 /usr/include/bits/types/struct_FILE.h:
 
@@ -556,8 +628,6 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 /usr/include/asm/types.h:
 
 /usr/include/alloca.h:
-
-/usr/include/bits/stdint-least.h:
 
 /usr/include/c++/16/bits/locale_classes.tcc:
 
@@ -599,10 +669,6 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/bits/math-vector.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h:
-
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h:
-
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/16/cctype:
@@ -619,13 +685,9 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/streambuf:
 
-/usr/include/c++/16/bits/new_allocator.h:
-
 /usr/include/c++/16/string_view:
 
 /usr/include/bits/types/__fpos64_t.h:
-
-/usr/include/c++/16/bits/new_except.h:
 
 /usr/include/bits/waitstatus.h:
 
@@ -643,13 +705,21 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/bits/stdint-intn.h:
 
-/usr/include/c++/16/bits/node_handle.h:
-
 /usr/include/bits/types/cookie_io_functions_t.h:
 
 /usr/include/sys/select.h:
 
 /usr/include/c++/16/ext/aligned_buffer.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/types/__FILE.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/c++/16/bits/memoryfwd.h:
+
+/usr/include/c++/16/bits/stl_construct.h:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -663,17 +733,35 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/asm/errno.h:
 
+/usr/include/c++/16/filesystem:
+
 /usr/lib/libxcb.so.1:
 
 /usr/include/bits/endian.h:
 
 /usr/include/bits/types.h:
 
+/usr/include/c++/16/bits/fstream.tcc:
+
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h:
+
+/usr/include/c++/16/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/16/bits/move.h:
+
+/usr/include/c++/16/bits/new_allocator.h:
+
+/usr/include/c++/16/bits/new_except.h:
+
+/usr/include/c++/16/bits/node_handle.h:
+
 /usr/include/c++/16/bits/ostream.h:
 
 /usr/include/c++/16/bits/predefined_ops.h:
 
 /usr/include/c++/16/bits/ostream_print.h:
+
+/usr/include/c++/16/bits/fs_ops.h:
 
 /usr/include/c++/16/ostream:
 
@@ -693,9 +781,29 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/bits/range_access.h:
 
+/usr/include/bits/mathcalls-narrow.h:
+
+/usr/include/c++/16/bits/refwrap.h:
+
+/usr/include/c++/16/bits/shared_ptr.h:
+
+/usr/include/c++/16/bits/stringfwd.h:
+
+/usr/include/bits/stdint-least.h:
+
+/usr/include/c++/16/bits/shared_ptr_base.h:
+
+/usr/include/c++/16/bits/algorithmfwd.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/include/c++/16/tr1/bessel_function.tcc:
+
 /usr/include/bits/mathcalls-helper-functions.h:
 
 /usr/include/c++/16/bits/specfun.h:
+
+/usr/include/c++/16/bits/sstream.tcc:
 
 /usr/include/c++/16/bits/stdexcept_throw.h:
 
@@ -711,17 +819,25 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/bits/stl_function.h:
 
+/usr/include/c++/16/bits/codecvt.h:
+
 /usr/include/c++/16/bits/stl_heap.h:
 
 /usr/include/c++/16/ext/numeric_traits.h:
 
 /usr/include/c++/16/bits/stl_iterator.h:
 
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/basic_file.h:
+
 /usr/include/c++/16/bits/stl_iterator_base_types.h:
 
 /usr/include/bits/locale.h:
 
 /usr/include/c++/16/bits/stl_pair.h:
+
+/usr/include/features-time64.h:
+
+/usr/include/c++/16/bits/stl_set.h:
 
 /usr/include/c++/16/bits/stl_uninitialized.h:
 
@@ -731,25 +847,21 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/bits/stl_vector.h:
 
-/usr/include/locale.h:
-
-/usr/include/c++/16/bits/streambuf.tcc:
-
-/usr/include/bits/types/__sigset_t.h:
-
-/usr/include/c++/16/iosfwd:
-
 /usr/include/c++/16/bits/streambuf_iterator.h:
-
-/usr/include/c++/16/bits/stringfwd.h:
-
-/usr/include/linux/stddef.h:
 
 /usr/include/c++/16/bits/uniform_int_dist.h:
 
+/usr/include/bits/struct_rwlock.h:
+
+/usr/include/c++/16/iomanip:
+
 /usr/include/c++/16/iostream:
 
+/usr/include/c++/16/bits/unique_ptr.h:
+
 /usr/include/c++/16/bits/uses_allocator_args.h:
+
+/usr/include/c++/16/fstream:
 
 /usr/include/c++/16/bits/version.h:
 
@@ -781,6 +893,10 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/ctime:
 
+/usr/include/linux/sched/types.h:
+
+/usr/include/c++/16/cwchar:
+
 /usr/include/wctype.h:
 
 /usr/include/sched.h:
@@ -809,6 +925,8 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/exception:
 
+/usr/include/c++/16/ext/concurrence.h:
+
 /usr/include/c++/16/bits/charconv.h:
 
 /usr/include/bits/atomic_wide_counter.h:
@@ -829,11 +947,11 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/pstl/glue_numeric_defs.h:
 
-/usr/include/c++/16/bits/stl_set.h:
-
-/usr/include/features-time64.h:
+/usr/lib/libraylib.so.6.0.0:
 
 /usr/include/c++/16/random:
+
+/usr/include/c++/16/sstream:
 
 /usr/include/stdio.h:
 
@@ -841,23 +959,11 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 
 /usr/include/c++/16/stdexcept:
 
-/usr/include/c++/16/bits/algorithmfwd.h:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/16/tr1/bessel_function.tcc:
-
 /usr/include/c++/16/tr1/beta_function.tcc:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/libatomic_asneeded.so:
-
-/usr/include/linux/errno.h:
 
 /usr/include/bits/floatn-common.h:
 
 /usr/include/c++/16/tr1/exp_integral.tcc:
-
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/error_constants.h:
 
 /usr/include/c++/16/bits/erase_if.h:
 
@@ -890,25 +996,3 @@ CMakeFiles/equ-kloku.dir/src/main.cc.o:
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h:
 
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++allocator.h:
-
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_inline.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h:
-
-/usr/include/linux/types.h:
-
-/usr/include/errno.h:
-
-/usr/include/gnu/stubs-64.h:
-
-/usr/include/bits/types/FILE.h:
-
-/usr/include/linux/posix_types.h:
-
-/usr/include/c++/16/cwchar:
-
-/usr/include/linux/sched/types.h:
-
-/usr/include/math.h:

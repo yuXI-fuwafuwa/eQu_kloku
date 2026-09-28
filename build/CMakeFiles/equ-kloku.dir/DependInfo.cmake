@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/src/main.cc" "CMakeFiles/equ-kloku.dir/src/main.cc.o" "gcc" "CMakeFiles/equ-kloku.dir/src/main.cc.o.d"
+  "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/src/platform_paths.cc" "CMakeFiles/equ-kloku.dir/src/platform_paths.cc.o" "gcc" "CMakeFiles/equ-kloku.dir/src/platform_paths.cc.o.d"
   "" "equ-kloku" "gcc" "CMakeFiles/equ-kloku.dir/link.d"
   )
 

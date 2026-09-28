@@ -1,0 +1,78 @@
+name: Cross-platform build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  macos:
+    strategy:
+      matrix:
+        include:
+          - runner: macos-15
+            architecture: arm64
+          - runner: macos-15-intel
+            architecture: x64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install raylib
+        run: brew install raylib
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$(brew --prefix raylib)"
+      - name: Build and test
+        run: |
+          cmake --build build --parallel
+          ctest --test-dir build --output-on-failure
+      - name: Check app bundle
+        run: |
+          cmake --install build --prefix "$RUNNER_TEMP/equ-kloku-install"
+          test -f "$RUNNER_TEMP/equ-kloku-install/Applications/equ-kloku.app/Contents/MacOS/equ-kloku"
+          test -f "$RUNNER_TEMP/equ-kloku-install/Applications/equ-kloku.app/Contents/Resources/SourceHanSansCN-Regular.otf"
+      - name: Package app bundle
+        run: |
+          ditto -c -k --sequesterRsrc --keepParent \
+            "$RUNNER_TEMP/equ-kloku-install/Applications/equ-kloku.app" \
+            "$RUNNER_TEMP/equ-kloku-macos-${{ matrix.architecture }}.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: equ-kloku-macos-${{ matrix.architecture }}
+          path: ${{ runner.temp }}/equ-kloku-macos-${{ matrix.architecture }}.zip
+          if-no-files-found: error
+
+  windows:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install raylib
+        shell: pwsh
+        run: |
+          git clone --depth 1 https://github.com/microsoft/vcpkg.git "$env:RUNNER_TEMP/vcpkg"
+          & "$env:RUNNER_TEMP/vcpkg/bootstrap-vcpkg.bat" -disableMetrics
+          & "$env:RUNNER_TEMP/vcpkg/vcpkg.exe" install raylib:x64-windows-static
+      - name: Configure
+        shell: pwsh
+        run: |
+          $toolchain = "$env:RUNNER_TEMP/vcpkg/scripts/buildsystems/vcpkg.cmake"
+          cmake -S . -B build -G "Visual Studio 17 2022" -A x64 "-DCMAKE_TOOLCHAIN_FILE=$toolchain" -DVCPKG_TARGET_TRIPLET=x64-windows-static
+      - name: Build and test
+        shell: pwsh
+        run: |
+          cmake --build build --config Release --parallel
+          ctest --test-dir build -C Release --output-on-failure
+      - name: Check installation
+        shell: pwsh
+        run: |
+          cmake --install build --config Release --prefix "$env:RUNNER_TEMP/equ-kloku-install"
+          if (!(Test-Path "$env:RUNNER_TEMP/equ-kloku-install/bin/equ-kloku.exe")) { exit 1 }
+          if (!(Test-Path "$env:RUNNER_TEMP/equ-kloku-install/share/equ-kloku/SourceHanSansCN-Regular.otf")) { exit 1 }
+      - name: Package installation
+        shell: pwsh
+        run: |
+          $prefix = "$env:RUNNER_TEMP/equ-kloku-install"
+          Compress-Archive -Path "$prefix/bin", "$prefix/share" -DestinationPath "$env:RUNNER_TEMP/equ-kloku-windows-x64.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: equ-kloku-windows-x64
+          path: ${{ runner.temp }}/equ-kloku-windows-x64.zip
+          if-no-files-found: error

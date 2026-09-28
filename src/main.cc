@@ -1,4 +1,5 @@
 #include "focus_session.h"
+#include "platform_paths.h"
 #include "progress_store.h"
 
 #include "raylib.h"
@@ -7,6 +8,8 @@
 #include <array>
 #include <cmath>
 #include <cstdint>
+#include <filesystem>
+#include <fstream>
 #include <iostream>
 #include <limits>
 #include <random>
@@ -66,17 +69,34 @@ Font SelectFont(const UiFonts& fonts, float size)
 UiFonts LoadUiFonts()
 {
     const auto codepoints = UiCodepoints();
-    constexpr std::array<const char*, 3> candidates{
-        "/usr/share/fonts/adobe-source-han-sans/SourceHanSansCN-Regular.otf",
-        "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
-        "/usr/share/fonts/maple/MapleMono-NF-CN-Medium.ttf"
+    namespace fs = std::filesystem;
+    const fs::path applicationDir = ExecutableDirectory();
+    const fs::path fontName = "SourceHanSansCN-Regular.otf";
+    const std::array<fs::path, 6> candidates{
+        applicationDir / "assets" / fontName,
+        applicationDir.parent_path() / "assets" / fontName,
+        applicationDir.parent_path() / "share" / "equ-kloku" / fontName,
+        applicationDir.parent_path() / "Resources" / fontName,
+        applicationDir / "Resources" / fontName,
+        applicationDir / "Contents" / "Resources" / fontName
     };
-    for (const char* path : candidates) {
-        if (!FileExists(path)) continue;
+    for (const fs::path& path : candidates) {
+        std::ifstream file(path, std::ios::binary | std::ios::ate);
+        if (!file) continue;
+        const std::streamoff size = file.tellg();
+        if (size <= 0 || size > std::numeric_limits<int>::max()) continue;
+        std::vector<unsigned char> data(static_cast<std::size_t>(size));
+        file.seekg(0);
+        if (!file.read(reinterpret_cast<char*>(data.data()), size)) continue;
+
+        const auto loadSize = [&](int pixels) {
+            return LoadFontFromMemory(".otf", data.data(), static_cast<int>(data.size()),
+                                      pixels, codepoints.data(), static_cast<int>(codepoints.size()));
+        };
         UiFonts fonts;
-        fonts.small = LoadFontEx(path, 19, codepoints.data(), static_cast<int>(codepoints.size()));
-        fonts.medium = LoadFontEx(path, 30, codepoints.data(), static_cast<int>(codepoints.size()));
-        fonts.large = LoadFontEx(path, 40, codepoints.data(), static_cast<int>(codepoints.size()));
+        fonts.small = loadSize(19);
+        fonts.medium = loadSize(30);
+        fonts.large = loadSize(40);
         if (IsFontValid(fonts.small) && IsFontValid(fonts.medium) && IsFontValid(fonts.large)) {
             SetTextureFilter(fonts.small.texture, TEXTURE_FILTER_BILINEAR);
             SetTextureFilter(fonts.medium.texture, TEXTURE_FILTER_BILINEAR);
@@ -168,7 +188,7 @@ int ParseMinutes(const std::string& input)
 
 int main()
 {
-    SetConfigFlags(FLAG_MSAA_4X_HINT);
+    SetConfigFlags(FLAG_MSAA_4X_HINT | FLAG_WINDOW_HIGHDPI);
     InitWindow(kWidth, kHeight, "eQu Kloku");
     if (!IsWindowReady()) {
         std::cerr << "Unable to open a graphical window. Check the display server.\n";
@@ -179,7 +199,7 @@ int main()
 
     UiFonts fonts = LoadUiFonts();
     if (!IsFontValid(fonts.small) || !IsFontValid(fonts.medium) || !IsFontValid(fonts.large)) {
-        std::cerr << "No supported Chinese font found. Install Source Han Sans CN.\n";
+        std::cerr << "Bundled Chinese font is missing or cannot be loaded.\n";
         CloseWindow();
         return 1;
     }

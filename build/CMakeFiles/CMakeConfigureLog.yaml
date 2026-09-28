@@ -2158,3 +2158,248 @@ events:
         - "/usr/pkg"
         - "/opt"
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:10 (find_package)"
+    name: "raylib"
+    configs:
+      -
+        filename: "raylib.cps"
+        kind: "cps"
+      -
+        filename: "raylibConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "raylib-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.0"
+      version_complete: "6.0"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "raylib"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/build/CMakeFiles/pkgRedirects/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/build/CMakeFiles/pkgRedirects/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/build/CMakeFiles/pkgRedirects/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/build/CMakeFiles/pkgRedirects/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.codex/tmp/arg0/codex-arg0U4v3Sd/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.codex/tmp/arg0/codex-arg0U4v3Sd/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.codex/tmp/arg0/codex-arg0U4v3Sd/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.codex/tmp/arg0/codex-arg0U4v3Sd/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/share/pnpm/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/share/pnpm/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/share/pnpm/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/share/pnpm/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/run/user/1000/fnm_multishells/329752_1790581021580/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/run/user/1000/fnm_multishells/329752_1790581021580/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/run/user/1000/fnm_multishells/329752_1790581021580/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/run/user/1000/fnm_multishells/329752_1790581021580/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/share/fnm/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/share/fnm/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/share/fnm/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/featherXI/.local/share/fnm/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/run/user/1000/fnm_multishells/329751_1790581021575/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/run/user/1000/fnm_multishells/329751_1790581021575/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/run/user/1000/fnm_multishells/329751_1790581021575/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/run/user/1000/fnm_multishells/329751_1790581021575/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/raylib-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/cps/raylib.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cmake/raylib/raylibConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/usr/lib/cmake/raylib/raylib-config.cmake"
+      mode: "config"
+      version: "6.0.0"
+    search_context:
+      ENV{PATH}:
+        - "/home/featherXI/.local/bin"
+        - "/home/featherXI/.codex/tmp/arg0/codex-arg0U4v3Sd"
+        - "/home/featherXI/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override"
+        - "/home/featherXI/.local/share/pnpm/bin"
+        - "/run/user/1000/fnm_multishells/329752_1790581021580/bin"
+        - "/home/featherXI/.local/share/fnm"
+        - "/run/user/1000/fnm_multishells/329751_1790581021575/bin"
+        - "/home/featherXI/.local/share/fnm"
+        - "/home/featherXI/.local/bin"
+        - "/home/featherXI/.local/bin"
+        - "/home/featherXI/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/featherXI/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback"
+        - "/opt/codex-desktop/resources"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...

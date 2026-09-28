@@ -8,10 +8,17 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/CMakeLists.txt"
+  "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/assets/OFL.txt"
+  "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/assets/SourceHanSansCN-Regular.otf"
   "CMakeFiles/4.4.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.4.3/CMakeSystem.cmake"
+  "/usr/lib/cmake/raylib/raylib-config-version.cmake"
+  "/usr/lib/cmake/raylib/raylib-config.cmake"
+  "/usr/lib/cmake/raylib/raylib-targets-release.cmake"
+  "/usr/lib/cmake/raylib/raylib-targets.cmake"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
+  "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
   "/usr/share/cmake/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake/Modules/CMakeInitializeConfigs.cmake"
   "/usr/share/cmake/Modules/CMakeLanguageInformation.cmake"
@@ -24,9 +31,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake/Modules/Compiler/GNU.cmake"
   "/usr/share/cmake/Modules/DartConfiguration.tcl.in"
-  "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
-  "/usr/share/cmake/Modules/FindPackageMessage.cmake"
-  "/usr/share/cmake/Modules/FindPkgConfig.cmake"
   "/usr/share/cmake/Modules/GNUInstallDirs.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
@@ -51,6 +55,8 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "assets/SourceHanSansCN-Regular.otf"
+  "assets/OFL.txt"
   "DartConfiguration.tcl"
   "CMakeFiles/CTestScript.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"

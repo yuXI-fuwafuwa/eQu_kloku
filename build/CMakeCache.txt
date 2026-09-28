@@ -295,6 +295,9 @@ equ_kloku_SOURCE_DIR:STATIC=/home/featherXI/Documents/yuXIwei/Project/eQu_kloku
 //Path to a library.
 pkgcfg_lib_RAYLIB_raylib:FILEPATH=/usr/lib/libraylib.so
 
+//The directory containing a CMake configuration file for raylib.
+raylib_DIR:PATH=/usr/lib/cmake/raylib
+
 
 ########################
 # INTERNAL cache entries

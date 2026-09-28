@@ -9,7 +9,7 @@ set(CTEST_SOURCE_DIRECTORY "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku"
 set(CTEST_BINARY_DIRECTORY "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/build")
 
 # CTest Update Step
-set(CTEST_UPDATE_COMMAND "")
+set(CTEST_UPDATE_COMMAND "/usr/bin/git")
 set(CTEST_UPDATE_OPTIONS "")
 set(CTEST_UPDATE_VERSION_ONLY "")
 set(CTEST_NIGHTLY_START_TIME "00:00:00 EDT")

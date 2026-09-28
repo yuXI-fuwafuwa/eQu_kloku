@@ -58,6 +58,13 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   endif()
 endif()
 
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/equ-kloku" TYPE FILE FILES
+    "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/assets/SourceHanSansCN-Regular.otf"
+    "/home/featherXI/Documents/yuXIwei/Project/eQu_kloku/assets/OFL.txt"
+    )
+endif()
+
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)

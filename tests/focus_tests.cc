@@ -9,7 +9,6 @@
 #include <random>
 #include <stdexcept>
 #include <string>
-#include <unistd.h>
 
 namespace {
 using Clock = FocusSession::Clock;
@@ -79,12 +78,41 @@ void TestCancelAndSimultaneousThresholds()
 
 void TestProgressPersistence()
 {
-    const std::filesystem::path root = std::filesystem::temp_directory_path() /
-        ("equ-kloku-test-" + std::to_string(getpid()));
-    std::filesystem::remove_all(root);
+    std::filesystem::path root;
+    std::random_device random;
+    for (int attempt = 0; attempt < 10; ++attempt) {
+        root = std::filesystem::temp_directory_path() /
+            ("equ-kloku-test-" + std::to_string(random()));
+        if (std::filesystem::create_directory(root)) break;
+        if (attempt == 9) throw std::runtime_error("Cannot create test directory");
+    }
+
+#ifdef _WIN32
+    const wchar_t* oldDataHome = _wgetenv(L"APPDATA");
+    const std::wstring oldValue = oldDataHome ? oldDataHome : L"";
+    _wputenv_s(L"APPDATA", root.wstring().c_str());
+    const auto restoreEnvironment = [&] { _wputenv_s(L"APPDATA", oldValue.c_str()); };
+    const std::filesystem::path progressPath = root / "equ-kloku" / "progress.txt";
+#elif defined(__APPLE__)
+    const char* oldDataHome = std::getenv("HOME");
+    const std::string oldValue = oldDataHome ? oldDataHome : "";
+    setenv("HOME", root.c_str(), 1);
+    const auto restoreEnvironment = [&] {
+        if (oldDataHome) setenv("HOME", oldValue.c_str(), 1);
+        else unsetenv("HOME");
+    };
+    const std::filesystem::path progressPath = root / "Library" /
+        "Application Support" / "equ-kloku" / "progress.txt";
+#else
     const char* oldDataHome = std::getenv("XDG_DATA_HOME");
     const std::string oldValue = oldDataHome ? oldDataHome : "";
     setenv("XDG_DATA_HOME", root.c_str(), 1);
+    const auto restoreEnvironment = [&] {
+        if (oldDataHome) setenv("XDG_DATA_HOME", oldValue.c_str(), 1);
+        else unsetenv("XDG_DATA_HOME");
+    };
+    const std::filesystem::path progressPath = root / "equ-kloku" / "progress.txt";
+#endif
 
     try {
         Check(LoadProgress().count == 0, "new progress should begin at zero");
@@ -93,24 +121,22 @@ void TestProgressPersistence()
         Check(SaveProgress(1).empty(), "saving same count failed");
         Check(LoadProgress().count == 1, "acknowledgement should not add count");
 
-        std::ofstream corrupt(root / "equ-kloku" / "progress.txt", std::ios::trunc);
+        std::ofstream corrupt(progressPath, std::ios::trunc);
         corrupt << "not a number\n";
         corrupt.close();
         Check(!LoadProgress().error.empty(), "corrupt progress should be reported");
 
-        std::ofstream negative(root / "equ-kloku" / "progress.txt", std::ios::trunc);
+        std::ofstream negative(progressPath, std::ios::trunc);
         negative << "-1\n";
         negative.close();
         Check(!LoadProgress().error.empty(), "negative progress should be rejected");
     } catch (...) {
-        if (oldDataHome) setenv("XDG_DATA_HOME", oldValue.c_str(), 1);
-        else unsetenv("XDG_DATA_HOME");
+        restoreEnvironment();
         std::filesystem::remove_all(root);
         throw;
     }
 
-    if (oldDataHome) setenv("XDG_DATA_HOME", oldValue.c_str(), 1);
-    else unsetenv("XDG_DATA_HOME");
+    restoreEnvironment();
     std::filesystem::remove_all(root);
 }
 }

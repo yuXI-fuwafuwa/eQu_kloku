@@ -1,27 +1,58 @@
 #include "progress_store.h"
 
+#include <cctype>
 #include <cstdlib>
 #include <filesystem>
 #include <fstream>
-#include <cctype>
+#include <random>
 #include <stdexcept>
 #include <system_error>
 
-#include <unistd.h>
+#ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
+#include <windows.h>
+#endif
 
 namespace {
 namespace fs = std::filesystem;
 
+#ifdef _WIN32
+std::wstring WindowsEnvironment(const wchar_t* name)
+{
+    const DWORD required = GetEnvironmentVariableW(name, nullptr, 0);
+    if (required == 0) return {};
+    std::wstring value(required, L'\0');
+    const DWORD copied = GetEnvironmentVariableW(name, value.data(), required);
+    if (copied == 0 || copied >= required) return {};
+    value.resize(copied);
+    return value;
+}
+#endif
+
 fs::path ProgressPath()
 {
+#ifdef _WIN32
+    const std::wstring appData = WindowsEnvironment(L"APPDATA");
+    if (!appData.empty() && fs::path(appData).is_absolute()) {
+        return fs::path(appData) / "equ-kloku" / "progress.txt";
+    }
+    const std::wstring userProfile = WindowsEnvironment(L"USERPROFILE");
+    if (userProfile.empty()) throw std::runtime_error("User profile is unavailable");
+    return fs::path(userProfile) / "AppData" / "Roaming" / "equ-kloku" / "progress.txt";
+#else
+    const char* home = std::getenv("HOME");
+    if (!home || !*home) throw std::runtime_error("HOME is not set");
+#ifdef __APPLE__
+    return fs::path(home) / "Library" / "Application Support" / "equ-kloku" / "progress.txt";
+#else
     const char* xdg = std::getenv("XDG_DATA_HOME");
     if (xdg && *xdg && fs::path(xdg).is_absolute()) {
         return fs::path(xdg) / "equ-kloku" / "progress.txt";
     }
-
-    const char* home = std::getenv("HOME");
-    if (!home || !*home) throw std::runtime_error("HOME is not set");
     return fs::path(home) / ".local" / "share" / "equ-kloku" / "progress.txt";
+#endif
+#endif
 }
 }
 
@@ -61,7 +92,9 @@ std::string SaveProgress(std::uint64_t count)
         const fs::path path = ProgressPath();
         fs::create_directories(path.parent_path());
         temporary = path;
-        temporary += ".tmp." + std::to_string(getpid());
+        std::random_device random;
+        const auto nonce = (static_cast<std::uint64_t>(random()) << 32) | random();
+        temporary += ".tmp." + std::to_string(nonce);
 
         {
             std::ofstream file(temporary, std::ios::binary | std::ios::trunc);
@@ -70,7 +103,14 @@ std::string SaveProgress(std::uint64_t count)
             file.flush();
             if (!file) throw std::runtime_error("Cannot write temporary progress file");
         }
+#ifdef _WIN32
+        if (!MoveFileExW(temporary.c_str(), path.c_str(),
+                         MOVEFILE_REPLACE_EXISTING | MOVEFILE_WRITE_THROUGH)) {
+            throw std::runtime_error("Cannot replace progress file");
+        }
+#else
         fs::rename(temporary, path);
+#endif
         return {};
     } catch (const std::exception&) {
         if (!temporary.empty()) {

@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/equ-kloku.dir/link.d"
   "CMakeFiles/equ-kloku.dir/src/main.cc.o"
   "CMakeFiles/equ-kloku.dir/src/main.cc.o.d"
+  "CMakeFiles/equ-kloku.dir/src/platform_paths.cc.o"
+  "CMakeFiles/equ-kloku.dir/src/platform_paths.cc.o.d"
   "equ-kloku"
   "equ-kloku.pdb"
 )
